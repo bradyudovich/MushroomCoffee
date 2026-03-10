@@ -1,35 +1,14 @@
-export default function Comparison() {
-  const rows = [
-    {
-      dimension: "Ingredients",
-      tallow:
-        "Grass-fed tallow, lemongrass & lavender — zero synthetics",
-      waterBased:
-        "Water, emulsifiers, preservatives & synthetic fragrance",
-    },
-    {
-      dimension: "Hydration",
-      tallow: "Deep 24-hour hydration from biocompatible lipids",
-      waterBased: "Evaporates quickly — moisture lasts only hours",
-    },
-    {
-      dimension: "Skin Compatibility",
-      tallow:
-        "Molecularly biocompatible with your skin's natural oils",
-      waterBased:
-        "Chemicals can disrupt the skin barrier over time",
-    },
-    {
-      dimension: "Vitamins",
-      tallow: "Naturally rich in vitamins A, D, E & K",
-      waterBased: "Synthetic additives, poorly absorbed by skin",
-    },
-    {
-      dimension: "Fillers",
-      tallow: "Zero fillers — every ingredient earns its place",
-      waterBased: "Up to 70% water plus cheap filler ingredients",
-    },
-  ];
+interface ComparisonRow {
+  dimension: string;
+  tallow: string;
+  waterBased: string;
+}
+
+interface ComparisonProps {
+  rows: readonly ComparisonRow[];
+}
+
+export default function Comparison({ rows }: ComparisonProps) {
 
   return (
     <div className="overflow-x-auto rounded-2xl border border-stone-200 shadow-sm">

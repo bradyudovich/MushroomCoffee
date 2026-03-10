@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
+import { PRODUCTS, ProductId } from "../../../config/products";
 
 // Lazy singleton: avoids build-time errors when STRIPE_SECRET_KEY is absent
 let _stripe: Stripe | null = null;
@@ -11,13 +12,24 @@ function getStripe(): Stripe | null {
   return _stripe;
 }
 
-export async function POST() {
+export async function POST(req: Request) {
   const stripe = getStripe();
   if (!stripe) {
     return NextResponse.json(
       { error: "Stripe secret key is not configured" },
       { status: 500 }
     );
+  }
+
+  const body = await req.json().catch(() => null);
+  if (!body || typeof body !== "object") {
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
+  const productId = body.productId as ProductId | undefined;
+  const product = productId ? PRODUCTS[productId] : undefined;
+
+  if (!product) {
+    return NextResponse.json({ error: "Product not found" }, { status: 404 });
   }
 
   try {
@@ -28,14 +40,11 @@ export async function POST() {
           price_data: {
             currency: "usd",
             product_data: {
-              name: "PureGlow Tallow Cream — Lemongrass & Lavender",
-              description:
-                "Small-batch, grass-fed tallow cream with lemongrass & lavender. Deep 24-hour hydration with vitamins A, D, E & K. Zero synthetics.",
-              images: [
-                "https://placehold.co/600x400/FDFCF0/8A9A5B?text=PureGlow",
-              ],
+              name: product.name,
+              description: product.checkoutDescription,
+              images: [product.checkoutImage],
             },
-            unit_amount: 2800,
+            unit_amount: product.price,
           },
           quantity: 1,
         },
@@ -52,5 +61,4 @@ export async function POST() {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
-
 
