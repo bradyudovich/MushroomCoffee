@@ -1,45 +1,49 @@
 export default function Comparison() {
   const rows = [
     {
-      dimension: "Focus & Clarity",
-      zenFocus: "Lion's Mane promotes sustained cognitive performance",
-      regular: "Short-lived caffeine spike, then brain fog",
+      dimension: "Ingredients",
+      tallow:
+        "Grass-fed tallow, lemongrass & lavender — zero synthetics",
+      waterBased:
+        "Water, emulsifiers, preservatives & synthetic fragrance",
     },
     {
-      dimension: "Energy Crash",
-      zenFocus: "Smooth, steady energy — no crash",
-      regular: "Inevitable afternoon energy crash",
+      dimension: "Hydration",
+      tallow: "Deep 24-hour hydration from biocompatible lipids",
+      waterBased: "Evaporates quickly — moisture lasts only hours",
     },
     {
-      dimension: "Gut Health",
-      zenFocus: "Prebiotic mushrooms support a healthy microbiome",
-      regular: "Can irritate the gut lining and increase acidity",
+      dimension: "Skin Compatibility",
+      tallow:
+        "Molecularly biocompatible with your skin's natural oils",
+      waterBased:
+        "Chemicals can disrupt the skin barrier over time",
     },
     {
-      dimension: "Anxiety",
-      zenFocus: "Adaptogenic blend helps calm the nervous system",
-      regular: "High caffeine levels can trigger anxiety & jitters",
+      dimension: "Vitamins",
+      tallow: "Naturally rich in vitamins A, D, E & K",
+      waterBased: "Synthetic additives, poorly absorbed by skin",
     },
     {
-      dimension: "Antioxidants",
-      zenFocus: "Rich in beta-glucans and polyphenols",
-      regular: "Some antioxidants, but far fewer functional compounds",
+      dimension: "Fillers",
+      tallow: "Zero fillers — every ingredient earns its place",
+      waterBased: "Up to 70% water plus cheap filler ingredients",
     },
   ];
 
   return (
-    <div className="overflow-x-auto rounded-2xl border border-neutral-700">
+    <div className="overflow-x-auto rounded-2xl border border-stone-200 shadow-sm">
       <table className="w-full text-sm md:text-base">
         <thead>
-          <tr className="bg-neutral-800 text-left">
-            <th className="px-6 py-4 font-semibold text-neutral-400 w-1/4">
+          <tr className="bg-[#8A9A5B] text-left">
+            <th className="px-6 py-4 font-semibold text-[#FDFCF0] w-1/4">
               Category
             </th>
-            <th className="px-6 py-4 font-semibold text-emerald-400">
-              ✦ ZenFocus Mushroom Coffee
+            <th className="px-6 py-4 font-semibold text-[#FDFCF0]">
+              ✦ PureGlow Tallow Cream
             </th>
-            <th className="px-6 py-4 font-semibold text-neutral-500">
-              Regular Coffee
+            <th className="px-6 py-4 font-semibold text-[#FDFCF0]/70">
+              Water-Based Lotions
             </th>
           </tr>
         </thead>
@@ -47,15 +51,17 @@ export default function Comparison() {
           {rows.map((row, index) => (
             <tr
               key={row.dimension}
-              className={`border-t border-neutral-700 transition-colors ${
-                index % 2 === 0 ? "bg-neutral-900" : "bg-neutral-800/50"
-              } hover:bg-neutral-700/40`}
+              className={`border-t border-stone-200 transition-colors ${
+                index % 2 === 0 ? "bg-white" : "bg-[#FDFCF0]"
+              } hover:bg-stone-50`}
             >
-              <td className="px-6 py-4 font-medium text-white">
+              <td className="px-6 py-4 font-semibold text-stone-700">
                 {row.dimension}
               </td>
-              <td className="px-6 py-4 text-emerald-300">{row.zenFocus}</td>
-              <td className="px-6 py-4 text-neutral-400">{row.regular}</td>
+              <td className="px-6 py-4 text-[#8A9A5B] font-medium">
+                {row.tallow}
+              </td>
+              <td className="px-6 py-4 text-stone-400">{row.waterBased}</td>
             </tr>
           ))}
         </tbody>

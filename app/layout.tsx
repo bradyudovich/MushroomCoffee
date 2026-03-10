@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ZenFocus Mushroom Coffee — Focus, Clarity & Calm Energy",
+  title: "PureGlow Tallow Cream — Lemongrass & Lavender | Modern Apothecary",
   description:
-    "Premium adaptogenic mushroom coffee with Lion's Mane, Chaga & Cordyceps. Smooth energy, zero crash, sharper focus.",
+    "Small-batch grass-fed tallow cream with lemongrass & lavender. Biocompatible deep hydration, vitamins A D E K, zero synthetics. $28.",
 };
 
 export default function RootLayout({

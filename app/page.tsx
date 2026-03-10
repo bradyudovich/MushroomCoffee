@@ -6,22 +6,22 @@ import Comparison from "@/components/Comparison";
 
 const benefits = [
   {
-    icon: "🧠",
-    title: "Sharper Focus",
+    icon: "🌿",
+    title: "24-Hour Deep Hydration",
     description:
-      "Lion's Mane mushroom has been shown to support nerve growth factor (NGF) production, helping you stay sharp, present, and in flow — without the mid-morning crash.",
+      "Grass-fed tallow's lipid profile mirrors your skin's own sebum, absorbing deeply without a greasy finish. One application keeps your skin supple and nourished from morning to night.",
   },
   {
-    icon: "⚡",
-    title: "Clean, Calm Energy",
+    icon: "💛",
+    title: "Vitamins A, D, E & K",
     description:
-      "Chaga and Cordyceps work synergistically with a lower caffeine dose to deliver smooth, sustained energy that lasts all day — zero jitters, zero crash.",
+      "Naturally loaded with the fat-soluble vitamins your skin craves — for cellular renewal, barrier protection, and the kind of quiet, lasting glow that comes from truly fed skin.",
   },
   {
-    icon: "🛡️",
-    title: "Immune & Gut Support",
+    icon: "🌸",
+    title: "Botanically Pure",
     description:
-      "Beta-glucans from functional mushrooms nourish your gut microbiome and fortify your immune system, making every cup a step toward better overall health.",
+      "Lemongrass and lavender essential oils bring calming aromatics and gentle skin-soothing benefits. No parabens, no water, no fillers — just three clean, purposeful ingredients.",
   },
 ];
 
@@ -52,43 +52,42 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-neutral-950 text-white">
+    <main className="min-h-screen bg-[#FDFCF0] text-stone-800">
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-24 text-center overflow-hidden">
-        {/* Background glow */}
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(52,211,153,0.08)_0%,_transparent_70%)]" />
+        {/* Soft sage radial glow */}
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_rgba(138,154,91,0.10)_0%,_transparent_70%)]" />
 
-        <span className="mb-4 inline-block rounded-full border border-emerald-700 bg-emerald-900/30 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-emerald-400">
-          New Formula — Limited Stock
+        <span className="mb-4 inline-block rounded-full border border-[#8A9A5B] bg-[#8A9A5B]/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#8A9A5B]">
+          Small-Batch · Grass-Fed · Limited Stock
         </span>
 
-        <h1 className="mb-6 max-w-3xl text-5xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl">
-          Coffee That Works{" "}
-          <span className="text-emerald-400">As Hard As You Do</span>
+        <h1 className="mb-6 max-w-3xl font-serif text-5xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl text-stone-900">
+          Your Skin&apos;s{" "}
+          <span className="text-[#8A9A5B]">Missing Match.</span>
         </h1>
 
-        <p className="mb-10 max-w-xl text-lg text-neutral-400 md:text-xl">
-          ZenFocus Mushroom Coffee blends premium arabica with Lion&apos;s Mane,
-          Chaga &amp; Cordyceps — so you can focus deeper, sustain your energy,
-          and feel genuinely good all day long.
+        <p className="mb-10 max-w-xl text-lg text-stone-600 md:text-xl">
+          Grass-fed tallow is molecularly similar to your skin&apos;s natural
+          oils — delivering deep, 24-hour hydration that synthetic lotions
+          simply can&apos;t replicate. Meet{" "}
+          <em>PureGlow Tallow Cream, Lemongrass &amp; Lavender.</em>
         </p>
 
         <button
           onClick={handleBuyNow}
           disabled={loading}
-          className="mb-4 rounded-full bg-emerald-500 px-10 py-4 text-lg font-bold text-neutral-950 shadow-lg shadow-emerald-500/30 transition-all hover:bg-emerald-400 hover:shadow-emerald-400/40 disabled:cursor-not-allowed disabled:opacity-60"
+          className="mb-4 rounded-full bg-[#8A9A5B] px-10 py-4 text-lg font-semibold text-[#FDFCF0] shadow-lg shadow-[#8A9A5B]/30 transition-all hover:bg-[#7a8a4e] hover:shadow-[#8A9A5B]/40 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {loading ? "Redirecting…" : "Buy Now — $34.00"}
+          {loading ? "Redirecting…" : "Buy Now — $28.00"}
         </button>
 
-        {error && (
-          <p className="mb-6 text-sm text-red-400">{error}</p>
-        )}
+        {error && <p className="mb-6 text-sm text-red-500">{error}</p>}
 
-        <div className="mt-10 relative w-full max-w-md overflow-hidden rounded-3xl border border-neutral-800 shadow-2xl shadow-emerald-900/20">
+        <div className="mt-10 relative w-full max-w-md overflow-hidden rounded-3xl border border-stone-200 shadow-2xl shadow-[#8A9A5B]/10">
           <Image
-            src="/mushroom-coffee-hero.png"
-            alt="ZenFocus Mushroom Coffee"
+            src="/pureglow-tallow-cream.png"
+            alt="PureGlow Tallow Cream — Lemongrass & Lavender"
             width={600}
             height={600}
             className="w-full object-cover"
@@ -98,26 +97,25 @@ export default function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section className="px-6 py-24 bg-neutral-900">
+      <section className="px-6 py-24 bg-white">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-4 text-center text-3xl font-bold tracking-tight md:text-4xl">
-            Why ZenFocus?
+          <h2 className="mb-4 text-center font-serif text-3xl font-bold tracking-tight text-stone-900 md:text-4xl">
+            Why PureGlow?
           </h2>
-          <p className="mb-14 text-center text-neutral-400 max-w-xl mx-auto">
-            Three science-backed reasons thousands have switched from ordinary
-            coffee.
+          <p className="mb-14 text-center text-stone-500 max-w-xl mx-auto">
+            Three reasons your skin will never go back to conventional lotion.
           </p>
           <div className="grid gap-8 md:grid-cols-3">
             {benefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="rounded-2xl border border-neutral-700 bg-neutral-800/50 p-8 transition-all hover:border-emerald-700/60 hover:bg-neutral-800"
+                className="rounded-2xl border border-stone-200 bg-[#FDFCF0] p-8 transition-all hover:border-[#8A9A5B]/50 hover:shadow-md"
               >
                 <div className="mb-4 text-4xl">{benefit.icon}</div>
-                <h3 className="mb-3 text-xl font-semibold text-white">
+                <h3 className="mb-3 font-serif text-xl font-semibold text-stone-900">
                   {benefit.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-neutral-400">
+                <p className="text-sm leading-relaxed text-stone-500">
                   {benefit.description}
                 </p>
               </div>
@@ -127,14 +125,14 @@ export default function Home() {
       </section>
 
       {/* Comparison Section */}
-      <section className="px-6 py-24 bg-neutral-950">
+      <section className="px-6 py-24 bg-[#FDFCF0]">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-4 text-center text-3xl font-bold tracking-tight md:text-4xl">
-            ZenFocus vs. Regular Coffee
+          <h2 className="mb-4 text-center font-serif text-3xl font-bold tracking-tight text-stone-900 md:text-4xl">
+            Tallow vs. Water-Based Lotions
           </h2>
-          <p className="mb-14 text-center text-neutral-400 max-w-xl mx-auto">
-            Not all coffee is created equal. See how ZenFocus stacks up against
-            your everyday brew.
+          <p className="mb-14 text-center text-stone-500 max-w-xl mx-auto">
+            Not all moisturizers are created equal. See what your skin is
+            actually getting.
           </p>
           <Comparison />
 
@@ -142,20 +140,18 @@ export default function Home() {
             <button
               onClick={handleBuyNow}
               disabled={loading}
-              className="rounded-full bg-emerald-500 px-10 py-4 text-lg font-bold text-neutral-950 shadow-lg shadow-emerald-500/30 transition-all hover:bg-emerald-400 hover:shadow-emerald-400/40 disabled:cursor-not-allowed disabled:opacity-60"
+              className="rounded-full bg-[#8A9A5B] px-10 py-4 text-lg font-semibold text-[#FDFCF0] shadow-lg shadow-[#8A9A5B]/30 transition-all hover:bg-[#7a8a4e] hover:shadow-[#8A9A5B]/40 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {loading ? "Redirecting…" : "Get ZenFocus — $34.00"}
+              {loading ? "Redirecting…" : "Get PureGlow — $28.00"}
             </button>
-            {error && (
-              <p className="mt-3 text-sm text-red-400">{error}</p>
-            )}
+            {error && <p className="mt-3 text-sm text-red-500">{error}</p>}
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-neutral-800 px-6 py-8 text-center text-sm text-neutral-600">
-        © {new Date().getFullYear()} ZenFocus. All rights reserved.
+      <footer className="border-t border-stone-200 px-6 py-8 text-center text-sm text-stone-400">
+        © {new Date().getFullYear()} PureGlow. All rights reserved.
       </footer>
     </main>
   );

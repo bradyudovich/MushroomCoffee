@@ -28,14 +28,14 @@ export async function POST() {
           price_data: {
             currency: "usd",
             product_data: {
-              name: "ZenFocus Mushroom Coffee",
+              name: "PureGlow Tallow Cream — Lemongrass & Lavender",
               description:
-                "Premium adaptogenic mushroom coffee blend for focus, clarity, and calm energy.",
+                "Small-batch, grass-fed tallow cream with lemongrass & lavender. Deep 24-hour hydration with vitamins A, D, E & K. Zero synthetics.",
               images: [
-                "https://placehold.co/600x400/1a1a1a/emerald?text=ZenFocus",
+                "https://placehold.co/600x400/FDFCF0/8A9A5B?text=PureGlow",
               ],
             },
-            unit_amount: 3400,
+            unit_amount: 2800,
           },
           quantity: 1,
         },
