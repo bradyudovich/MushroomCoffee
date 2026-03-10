@@ -50,7 +50,7 @@ export async function POST(req: Request) {
         },
       ],
       mode: "payment",
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000"}/success`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000"}/success?productId=${productId}`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000"}/`,
     });
 
